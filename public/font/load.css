@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'IRANYekanWeb';
+  font-weight: 400;
+  src: local('IRANYekanWeb'), url(./IranYekan/woff2/IRANYekanWebRegular.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'IRANYekanWeb';
+  font-weight: 500;
+  src: local('IRANYekanWeb'), url(./IranYekan/woff2/IRANYekanWebBold.woff2) format('woff2');
+}
