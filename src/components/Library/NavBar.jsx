@@ -26,9 +26,16 @@ import GoogleIcon from "@mui/icons-material/Google";
 import CloseIcon from "@mui/icons-material/Close";
 import Autocomplete from "@mui/material/Autocomplete";
 import PublicIcon from "@mui/icons-material/Public";
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import { useState } from "react";
+import { SignUp } from "./SignUp";
 
 export default function NavBar() {
+  
+
+  
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   const [placement, setPlacement] = React.useState();
@@ -41,8 +48,6 @@ export default function NavBar() {
 
   const [isHover, setIsHover] = React.useState(false);
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   return (
     <Box
@@ -137,141 +142,8 @@ export default function NavBar() {
             >
               <FontAwesomeIcon icon={faBagShopping} fontSize="large" />
             </IconButton>
-            <Button
-              onClick={handleOpen}
-              onMouseEnter={() => {
-                setIsHover(true);
-              }}
-              style={{ color: isHover ? "black" : "#8a8a8a", direction: "ltr" }}
-              endIcon={<FontAwesomeIcon icon={faUser} fontSize="large" />}
-            >
-              ورود و ثبت نام
-            </Button>
-            <Modal open={open} onClose={handleClose}>
-              <Box
-                sx={{
-                  position: "absolute",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: 550,
-                  padding: "15px",
-                  bgcolor: "#fff",
-                  borderRadius: "5px",
-                  boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;",
-                }}
-              >
-                <CloseIcon onClick={handleClose} />
-                <Box sx={{ marginLeft: "45%", marginBottom: "15px" }}>
-                  <FontAwesomeIcon
-                    icon={faUser}
-                    fontSize="50px"
-                    color="#424242"
-                  />
-                </Box>
-                <Typography
-                  id="modal-modal-title"
-                  sx={{ textAlign: "center", fontSize: "20px" }}
-                >
-                  ورود یا ثبت‌ نام
-                </Typography>
-                <Typography
-                  id="modal-modal-description"
-                  sx={{
-                    mt: 2,
-                    direction: "rtl",
-                    fontSize: "14px",
-                    textAlign: "center",
-                    marginBottom: "25px",
-                  }}
-                >
-                  لطفا کد کشور را انتخاب و شماره همراه خود را وارد کنید
-                </Typography>
-                <Stack direction= "row"
-                  sx={{
-                    backgroundColor: "#f0f0f0",
-                    borderRadius: "10px",
-                    height: "50px",
-                    width: "65%",
-                    marginLeft: "18%",
-                    marginBottom: "20px",
-                    alignItems: "center",
-                    padding: "10px",
-                  }}
-                >
-                  <PublicIcon />
-                  <Typography marginLeft="5px">(+98)</Typography>
-                  <KeyboardArrowDownIcon marginLeft="5px"/>
-                  <Divider orientation="vertical" sx={{ m: "0.5px 10px", height: 30 }} />
-                  <InputBase
-                    placeholder="9123456789"
-                    sx={{
-                      alignItems: "center",
-                    }}
-                  />
-                </Stack>
-                <Button
-                  sx={{
-                    backgroundColor: "#28c5cc",
-                    borderRadius: "10px",
-                    color: "white",
-                    display: "block",
-                    height: "55px",
-                    width: "65%",
-                    marginLeft: "18%",
-                    marginBottom: "50px",
-                    fontSize: "19px",
-                  }}
-                >
-                  ورود
-                </Button>
-                {/* <Divider>
-                  <Chip label="یا" />
-                </Divider> */}
-                <Box
-                  sx={{
-                    borderRadius: "50%",
-                    width: "33px",
-                    height: "33px",
-                    backgroundColor: "#f5f5f5",
-                    border: "1px solid #ccc",
-                    color: "#9e9e9e",
-                    textAlign: "center",
-                    position: "absolute",
-                    right: "47%",
-                    top: "60%",
-                    paddingTop: "4px",
-                  }}
-                >
-                  یا
-                </Box>
-                <Box
-                  sx={{
-                    borderTop: "2px solid #cfcfcf",
-                    width: "65%",
-                    textAlign: "center",
-                    marginLeft: "18%",
-                    padding: "40px",
-                  }}
-                >
-                  <Stack direction="row" spacing={1} sx={{ marginLeft: "15%" }}>
-                    <Typography sx={{ paddingBottom: "30px" }}>
-                      ورود با حساب گوگل
-                    </Typography>
-                    <GoogleIcon />
-                  </Stack>
-                  <Stack direction="row" spacing={1} sx={{ marginLeft: "25%" }}>
-                    <Typography sx={{ paddingBottom: "30px" }}>
-                      ورود با ایمیل
-                    </Typography>
-                    <MailOutlineIcon />
-                  </Stack>
-                  <Typography sx={{ fontSize: "13px", color: "#9E9E9E" }}>
-                    قوانین استفاده از فیدیبو را پذیرفته‌ام
-                  </Typography>
-                </Box>
-              </Box>
-            </Modal>
+            <SignUp />
+            
           </div>
         </Stack>
       </Container>
